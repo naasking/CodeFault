@@ -11,7 +11,7 @@ A library to check that compilation fails on code fragments:
     class Foo<T> where T : Delegate
     {
     }")
-            .FailsWith(code.Error("CS0702", 4)); // Constraint cannot be special class 'Delegate'
+            .FailsWith(code.Error("CS0702", line:4)); // Constraint cannot be special class 'Delegate'
     }
 
 If the compilation does not have that error at the given line,
