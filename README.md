@@ -4,11 +4,11 @@ A library to check that compilation fails on code fragments:
 
     using (var code = new Compiler("C#"))
     {
-        code.Reference<int>()	// reference System.dll assembly
+        code.Reference\<int\>()	// reference System.dll assembly
             .Compile(@"
 using System;
 
-class Foo<T> where T : Delegate
+class Foo\<T\> where T : Delegate
 {
 }")
             .FailsWith(code.Error("CS0702", 4)); // Constraint cannot be special class 'Delegate'
