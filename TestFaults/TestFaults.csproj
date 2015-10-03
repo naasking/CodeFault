@@ -43,7 +43,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CCheck\CodeFault.csproj">
+    <ProjectReference Include="..\CodeFault\CodeFault.csproj">
       <Project>{6206F1DC-8E5B-47DE-9E73-9AD03ED9C1E8}</Project>
       <Name>CodeFault</Name>
     </ProjectReference>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>CodeFault</id>
+    <version>$vers$</version>
+    <title>CodeFault</title>
+    <authors>Sandro Magi</authors>
+    <owners>Sandro Magi</owners>
+    <licenseUrl>http://www.gnu.org/licenses/lgpl-2.1.txt</licenseUrl>
+    <projectUrl>https://github.com/naasking/CodeFault</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>A simple testing library to check that compilation fails on code fragments.</description>
+    <summary>A simple testing library to check that compilation fails on code fragments.</summary>
+    <copyright>Sandro Magi 2015</copyright>
+    <frameworkAssemblies>
+      <frameworkAssembly assemblyName="System" targetFramework="" />
+      <frameworkAssembly assemblyName="System.Core" targetFramework="" />
+    </frameworkAssemblies>
+  </metadata>
+</package>
