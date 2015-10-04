@@ -44,6 +44,7 @@ namespace CodeFault
         /// <returns>The current instance.</returns>
         public Compiler Reference(string assembly)
         {
+            if (provider == null) throw new ObjectDisposedException(GetType().Name);
             options.ReferencedAssemblies.Add(assembly);
             return this;
         }
@@ -55,6 +56,7 @@ namespace CodeFault
         /// <returns>The current instance.</returns>
         public Compiler Reference<T>()
         {
+            if (provider == null) throw new ObjectDisposedException(GetType().Name);
             var asm = typeof(T).Assembly;
             return asm == typeof(int).Assembly ? Reference("System.dll") : Reference(typeof(T).Assembly.FullName);
         }
@@ -66,6 +68,7 @@ namespace CodeFault
         /// <returns>The current instance.</returns>
         public Compiler Reference(params string[] assemblies)
         {
+            if (provider == null) throw new ObjectDisposedException(GetType().Name);
             options.ReferencedAssemblies.AddRange(assemblies);
             return this;
         }
@@ -79,6 +82,7 @@ namespace CodeFault
         /// <returns></returns>
         public CompilerError Error(string errorNumber, int line, int column = -1)
         {
+            if (provider == null) throw new ObjectDisposedException(GetType().Name);
             return new CompilerError { Line = line, Column = column, ErrorNumber = errorNumber };
         }
 
@@ -90,6 +94,7 @@ namespace CodeFault
         /// <returns>The current instance.</returns>
         public Compiler FailsWith(string program, params CompilerError[] expected)
         {
+            if (provider == null) throw new ObjectDisposedException(GetType().Name);
             if (expected == null || expected.Length == 0) throw new ArgumentException("CCheck only checks for code that has compile errors.");
             Compile(program).FailsWith(expected);
             return this;
@@ -102,6 +107,7 @@ namespace CodeFault
         /// <returns>The compilation results.</returns>
         public CompilerResults Compile(string program)
         {
+            if (provider == null) throw new ObjectDisposedException(GetType().Name);
             return provider.CompileAssemblyFromSource(options, program);
         }
 
